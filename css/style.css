@@ -493,6 +493,15 @@ margin-bottom: 2rem;
     color: var(--primary-key);
     margin-right: 0.5rem;
 }
+/* Pricing-information */
+.pricing-notes{
+    padding: 3rem 2rem;
+    color: #9f9caf;
+    text-align: center;
+}
+
+
+
 /* Media Queries */
 
 @media (max-width:992px){
@@ -620,4 +629,5 @@ margin-bottom: 2rem;
     .pricing__card{
         margin-bottom:4.5rem;
     }
+
 }
