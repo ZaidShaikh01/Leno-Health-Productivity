@@ -385,6 +385,36 @@ ul{
     max-width: 200px;
     margin: 0 auto;
 }
+/* Download - Section */
+.download{
+    background:#000 url(../images/download-background.jpg) center center / cover no-repeat;
+    padding: 11.5rem 2rem 8rem;
+}
+.download__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.download__content{
+    max-width: 500px;
+}
+.download__description{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+}
+.download__buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.download__button{
+    padding: 1rem 2rem;
+}
 /* Media Queries */
 
 @media (max-width:992px){
@@ -403,7 +433,7 @@ ul{
         gap: 1rem;
     }
     .hero__button{
-        max-width: 100%;
+        width: 100%;
     }
     .hero__image img{
     max-width: 350px;
@@ -467,6 +497,20 @@ ul{
         flex-direction: column;
         gap: 2rem;
         margin-top: 4rem;
+    }
+    .download{
+        padding-top: 10rem;
+        text-align: center;
+    }
+    .download__container{
+        flex-direction: column-reverse;
+    }
+    .download__buttons{
+        flex-direction: column;
+    }
+    .download__button{
+        padding: 0.7rem;
+        width: 100%;
     }
 }
 @media (max-width:768px){
