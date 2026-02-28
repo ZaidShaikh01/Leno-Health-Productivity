@@ -221,8 +221,8 @@ ul{
 }
 .features__grid-item{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     text-align: right;
     gap: 1.5rem;
 }
@@ -236,6 +236,127 @@ ul{
 }
 .features__grid-item i{
     color: var(--primary-key);
+}
+.features__grid-column-right .features__grid-item{
+    flex-direction: row-reverse;
+    text-align: left;
+}
+/* Preview */
+.preview{
+    background: url(../images/video-background.jpg) center center /cover no-repeat;
+     
+}
+.preview__container{
+    padding: 6rem 2rem;
+    text-align: center;
+}
+.preview__title{
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+.preview__description{
+    max-width: 600px;
+    margin: 1rem auto 4rem;
+}
+.preview__video-wrapper{
+    position:relative;
+}
+.preview__video-wrapper img{
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+/* Play button Container */
+.preview__video-play-button{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+    display: block;
+    box-sizing: content-box;
+    width: 2rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1.25rem 1.25rem 1.25rem 1.75rem;
+    /* background-color: red; */
+}
+/* Play Button Circle */
+.preview__video-play-button::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    background-color: var(--primary-key);
+    height: 4.375rem;
+    width: 4.375rem;
+    border-radius: 50%;
+    display: block;
+    transition: all 200ms;
+
+}
+/* Play Button Triangle */
+.preview__video-play-button span{
+    position: relative;
+    display: block;
+    z-index: 3;
+    top: 0.375rem;
+    left: 0.25rem;
+    width: 0;
+    height: 0;
+    border-left: 1.625rem solid white;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+}
+/* Details */
+.details{
+    padding: 9rem 2rem;
+}
+.details__grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+.details__grid-content{
+    max-width: 500px;
+    width: 100%;
+   
+}
+.details__grid-heading{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+.details__grid-description{
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+.details__icons{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8rem;
+    gap: 2rem;
+    justify-content: space-around;
+    text-align: center;
+}
+.details__icons i{
+    color: var(--primary-key);
+    margin-bottom: 1rem;
+}
+.details__icons-amount{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+.details__icons-title{
+    font-weight: 400;
+    font-size: 1.3rem;
+    
 }
 /* Media Queries */
 
@@ -266,28 +387,59 @@ ul{
     .testimonials__card{
         padding: 0 1.5rem;
     }
+    .testimonials__card:nth-child(3){
+        display: none;
+    }
     .features__grid{
         grid-template-columns: 1fr;
-    }
-    .features__grid-column-left,
-    .features__grid-column-right{
-        order: 2;
-        margin-bottom: 2rem;
-    }
-    .features__grid-item,.features__grid-column-right,.features__grid-column-left{
-        text-align: center;
-        flex-direction: column-reverse;
-        max-width: 400px;
-    }
-    .features__grid-item-icon{
-        margin: 0 auto;
     }
     .features__grid-column-center{
         order: 1;
         margin-bottom: 3rem;
     }
+    
+    
+    .features__grid-column-left,
+    .features__grid-column-right{
+        
+        order:2;
+        margin-bottom: 2rem;
+    }
+    
+    
+    .features__grid-column-right .features__grid-item,
+    .features__grid-column-left .features__grid-item
+    {
+        text-align: center;
+        flex-direction: column-reverse;
+        max-width: 400px;
+    }
+
+    
+    .features__grid-item-icon{
+        margin: 0 auto;
+    }
+    
     .features__grid-column-center img{
         max-width: 300px;
+    }
+    .details__grid{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .details__grid-image img{
+        width: 100%;
+        max-width: 400px;
+    }
+    .details__grid-content{
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .details__icons{
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 4rem;
     }
 }
 @media (max-width:768px){
